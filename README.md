@@ -3,7 +3,7 @@
 An example approach for Android Application modularization and Reactive Clean architecture.
 
 
-## Tech Stack:
+## Tech Stack
 
 - Clean architecture using kotlin
 - Presentation layer using MVVM
