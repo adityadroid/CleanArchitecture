@@ -1,6 +1,6 @@
-package com.mobile.clean.arch.domain
+package com.mobile.clean.arch.domain.entities
 
-data class MoviesItem(
+data class MoviesItemEntity(
     var vote_count: Int,
     var vote_average: Double,
     var title: String,
