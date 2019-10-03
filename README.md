@@ -1,4 +1,4 @@
-# CleanArchitecture
+# Movies Clean Architecture
 
 An example approach for Android Application modularization and Reactive Clean architecture.
 
