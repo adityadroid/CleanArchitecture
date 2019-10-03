@@ -1,5 +1,8 @@
 # CleanArchitecture
 
+An example approach for Android Application modularization and Reactive Clean architecture.
+
+
 ## Tech Stack:
 ```
 - Clean architecture using kotlin
