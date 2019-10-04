@@ -13,10 +13,13 @@ class MoviesCacheImpl(
     private val dataToEntityMapper: MoviesDataEntityMapper
 ) : MoviesDataStore {
 
-
     private val moviesDao: MoviesDao = database.getMoviesDao()
 
-    override fun getMovies(): Flowable<MoviesEntity> {
+    override fun getMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity> {
         return moviesDao.getMovies().map {
             dataToEntityMapper.mapToEntity(it)
         }

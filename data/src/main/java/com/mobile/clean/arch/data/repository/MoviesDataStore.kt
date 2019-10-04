@@ -4,5 +4,9 @@ import com.mobile.clean.arch.domain.entities.MoviesEntity
 import io.reactivex.Flowable
 
 interface MoviesDataStore {
-    fun getMovies(): Flowable<MoviesEntity>
+    fun getMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity>
 }
