@@ -5,6 +5,21 @@ import io.reactivex.Flowable
 
 interface MoviesRepository {
 
-    fun getMovies(): Flowable<MoviesEntity>
+    fun getMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity>
 
+    fun getLocalMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity>
+
+    fun getRemoteMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity>
 }
