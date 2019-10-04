@@ -7,6 +7,7 @@ import com.mobile.clean.arch.domain.entities.MoviesEntity
 import com.mobile.clean.arch.domain.usecases.GetMoviesUseCase
 import com.mobile.clean.arch.presentation.common.BaseViewModel
 import com.mobile.clean.arch.presentation.entities.Data
+import com.mobile.clean.arch.presentation.entities.Error
 import com.mobile.clean.arch.presentation.entities.Movies
 import com.mobile.clean.arch.presentation.entities.Status
 
