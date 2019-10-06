@@ -5,7 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mobile.clean.arch.presentation.R
+import com.mobile.clean.arch.presentation.di.IMAGE_URL
 import com.mobile.clean.arch.presentation.entities.MoviesItem
+import com.squareup.picasso.NetworkPolicy
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.movies_item.view.*
 
 class MoviesListAdapter : RecyclerView.Adapter<MoviesListAdapter.MoviesViewHolder>() {
 
@@ -28,7 +32,10 @@ class MoviesListAdapter : RecyclerView.Adapter<MoviesListAdapter.MoviesViewHolde
 
         fun bind(moviesItem: MoviesItem) {
             with(itemView) {
-                moviesItem.title
+                textViewTitle.text = moviesItem.title
+                Picasso.with(itemView.context).load(IMAGE_URL + moviesItem.poster_path)
+                    .networkPolicy(NetworkPolicy.OFFLINE)
+                    .into(imageViewPoster)
             }
         }
     }

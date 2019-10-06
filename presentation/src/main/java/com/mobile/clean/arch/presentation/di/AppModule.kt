@@ -65,6 +65,7 @@ val viewModelModules = module {
 }
 
 
+public const val IMAGE_URL = "https://image.tmdb.org/t/p/w780/"
 private const val BASE_URL = "https://api.themoviedb.org/"
 private const val RETROFIT_INSTANCE = "Retrofit"
 private const val API = "Api"
