@@ -6,7 +6,6 @@ import io.reactivex.Flowable
 interface MoviesDataStore {
     fun getMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<MoviesEntity>
 }

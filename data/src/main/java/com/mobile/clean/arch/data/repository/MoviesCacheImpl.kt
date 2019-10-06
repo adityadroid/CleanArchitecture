@@ -17,8 +17,7 @@ class MoviesCacheImpl(
 
     override fun getMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<MoviesEntity> {
         return moviesDao.getMovies().map {
             dataToEntityMapper.mapToEntity(it)

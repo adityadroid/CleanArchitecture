@@ -7,19 +7,16 @@ interface MoviesRepository {
 
     fun getMovies(
         mediaType: String = "",
-        timeWindow: String = "",
-        apiKey: String = ""
+        timeWindow: String = ""
     ): Flowable<MoviesEntity>
 
     fun getLocalMovies(
         mediaType: String = "",
-        timeWindow: String = "",
-        apiKey: String = ""
+        timeWindow: String = ""
     ): Flowable<MoviesEntity>
 
     fun getRemoteMovies(
         mediaType: String = "",
-        timeWindow: String = "",
-        apiKey: String = ""
+        timeWindow: String = ""
     ): Flowable<MoviesEntity>
 }

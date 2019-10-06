@@ -6,15 +6,13 @@ abstract class BaseFlowableUseCase<T>(private val transformer: FlowableRxTransfo
 
     abstract fun createFlowable(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<T>
 
     fun single(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<T> {
-        return createFlowable(mediaType, timeWindow, apiKey).compose(transformer)
+        return createFlowable(mediaType, timeWindow).compose(transformer)
     }
 }

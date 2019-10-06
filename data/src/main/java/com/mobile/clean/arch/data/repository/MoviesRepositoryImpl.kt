@@ -11,11 +11,10 @@ class MoviesRepositoryImpl(
 
     override fun getMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<MoviesEntity> {
-        val updateMoviesFlowable = remote.getMovies(mediaType, timeWindow, apiKey)
-        return cache.getMovies(mediaType, timeWindow, apiKey)
+        val updateMoviesFlowable = remote.getMovies(mediaType, timeWindow)
+        return cache.getMovies(mediaType, timeWindow)
             .mergeWith(updateMoviesFlowable.doOnNext { remoteMovies ->
                 cache.saveMovies(remoteMovies)
             })
@@ -23,14 +22,12 @@ class MoviesRepositoryImpl(
 
     override fun getLocalMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
-    ): Flowable<MoviesEntity> = cache.getMovies(mediaType, timeWindow, apiKey)
+        timeWindow: String
+    ): Flowable<MoviesEntity> = cache.getMovies(mediaType, timeWindow)
 
     override fun getRemoteMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
-    ): Flowable<MoviesEntity> = remote.getMovies(mediaType, timeWindow, apiKey)
+        timeWindow: String
+    ): Flowable<MoviesEntity> = remote.getMovies(mediaType, timeWindow)
 
 }

@@ -20,10 +20,9 @@ class MoviesViewModel(
 
     fun fetchMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ) {
-        val disposable = getMoviesUseCase.getMovies(mediaType, timeWindow, apiKey)
+        val disposable = getMoviesUseCase.getMovies(mediaType, timeWindow)
             .flatMap { mapper.Flowable(it) }
             .subscribe({ response ->
                 Log.d(TAG, "On next Called")
