@@ -4,9 +4,17 @@ import io.reactivex.Flowable
 
 abstract class BaseFlowableUseCase<T>(private val transformer: FlowableRxTransformer<T>) {
 
-    abstract fun createFlowable(data: Map<String, Any>? = null): Flowable<T>
+    abstract fun createFlowable(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<T>
 
-    fun single(withData: Map<String, Any>? = null): Flowable<T> {
-        return createFlowable(withData).compose(transformer)
+    fun single(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<T> {
+        return createFlowable(mediaType, timeWindow, apiKey).compose(transformer)
     }
 }

@@ -65,7 +65,7 @@ val viewModelModules = module {
 }
 
 
-private const val BASE_URL = "https://api.themoviedb.org/3"
+private const val BASE_URL = "https://api.themoviedb.org/"
 private const val RETROFIT_INSTANCE = "Retrofit"
 private const val API = "Api"
 private const val GET_MOVIES_USECASE = "getMoviesUseCase"
