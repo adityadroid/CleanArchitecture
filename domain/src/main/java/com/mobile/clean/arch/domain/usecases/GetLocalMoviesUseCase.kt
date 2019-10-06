@@ -11,13 +11,20 @@ class GetLocalMoviesUseCase(
     private val repositories: MoviesRepository
 ) : BaseFlowableUseCase<MoviesEntity>(transformer) {
 
-    override fun createFlowable(data: Map<String, Any>?): Flowable<MoviesEntity> {
-        return repositories.getMovies()
+    override fun createFlowable(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity> {
+        return repositories.getMovies(mediaType, timeWindow, apiKey)
     }
 
-    fun getMovies(): Flowable<MoviesEntity> {
-        val data = HashMap<String, String>()
-        return single(data)
+    fun getMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ): Flowable<MoviesEntity> {
+        return single(mediaType, timeWindow, apiKey)
     }
 
 

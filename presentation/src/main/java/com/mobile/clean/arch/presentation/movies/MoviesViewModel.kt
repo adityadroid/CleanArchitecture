@@ -18,8 +18,12 @@ class MoviesViewModel(
 
     var mMovies = MutableLiveData<Data<Movies>>()
 
-    fun fetchMovies() {
-        val disposable = getMoviesUseCase.getMovies()
+    fun fetchMovies(
+        mediaType: String,
+        timeWindow: String,
+        apiKey: String
+    ) {
+        val disposable = getMoviesUseCase.getMovies(mediaType, timeWindow, apiKey)
             .flatMap { mapper.Flowable(it) }
             .subscribe({ response ->
                 Log.d(TAG, "On next Called")

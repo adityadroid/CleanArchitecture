@@ -14,7 +14,7 @@ class MoviesRemoteImpl constructor(private val api: RemoteMoviesApi) : MoviesDat
         timeWindow: String,
         apiKey: String
     ): Flowable<MoviesEntity> {
-        return api.getMovieList(mediaType, timeWindow, apiKey).map { moviesMapper.mapToEntity(it) }
+        return api.getMovieList(mediaType, timeWindow).map { moviesMapper.mapToEntity(it) }
     }
 
 }

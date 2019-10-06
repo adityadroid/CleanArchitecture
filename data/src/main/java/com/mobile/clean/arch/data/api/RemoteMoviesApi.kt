@@ -7,9 +7,9 @@ import retrofit2.http.Path
 
 interface RemoteMoviesApi {
 
-    @GET("/trending/{media_type}/{time_window}?api_key={api_key}")
+    @GET("/3/trending/{media_type}/{time_window}")
     fun getMovieList(
-        @Path("media_type") mediaType: String, @Path("time_window") timeWindow: String, @Path("api_key") apiKey: String
+        @Path("media_type") mediaType: String, @Path("time_window") timeWindow: String
     ): Flowable<MoviesData>
 
 }
