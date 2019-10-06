@@ -21,7 +21,7 @@ class MoviesActivity : AppCompatActivity() {
         listAdapter = MoviesListAdapter()
         recyclerViewMovies.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerViewMovies.adapter = listAdapter
-        moviesList.fetchMovies("all", "week", "59a27182d34949568c9961b86a3aa7a8")
+        moviesList.fetchMovies("all", "week", "")
     }
 
     override fun onStart() {
