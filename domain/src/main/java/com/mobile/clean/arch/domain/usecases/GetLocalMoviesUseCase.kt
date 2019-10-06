@@ -13,18 +13,16 @@ class GetLocalMoviesUseCase(
 
     override fun createFlowable(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<MoviesEntity> {
-        return repositories.getMovies(mediaType, timeWindow, apiKey)
+        return repositories.getMovies(mediaType, timeWindow)
     }
 
     fun getMovies(
         mediaType: String,
-        timeWindow: String,
-        apiKey: String
+        timeWindow: String
     ): Flowable<MoviesEntity> {
-        return single(mediaType, timeWindow, apiKey)
+        return single(mediaType, timeWindow)
     }
 
 
